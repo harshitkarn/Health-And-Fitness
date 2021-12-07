@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="600dp"
+    android:layout_gravity="center">
+
+    <FrameLayout
+        android:id="@+id/frameLayout3a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView36a"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="About Us"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dialogclsa"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:text="X"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout3a"
+        tools:layout_editor_absoluteY="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView20a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:text="Behind the original ‘Health and Fitness’ app brand"
+                android:textColor="#0000FF" />
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:text="In 2021, Three students were trying just to complete their college project. In the meanwhile, they want to stay fit during his college journey, as everyone wants to. It wasn’t easy—they found it difficult to stay motivated during runs. They wanted a project that would be with him every step of the way. Not finding a product that suited his needs, they came to an idea of his own app with the features that would suit a normal or common people. Then this app came into existence, and was first officially launched/released in our semester exams.\n\n So lets start with each of the developer’s journey. We cannot let this talk without talking Harshit Karn. He is one of the nerds in our college batch. He is from Saharsha, Bihar. When this hard-working, dedicated person would be one of our project partner, we can actually go to sleep. Those freaks and geniuses who are reading this blog, can actually go to his contacts and ask him, what he really enjoys helping his looser friends. I still don’t know about this. \n\n Now come to our next developer, Aswini Verma. He is basically from Ranchi, Jharkhand and is the smartest one. He is the first, whose mind bells this project idea. He is really good in everything, hardworking guy. He is really a good presenter also. That talent also helped him to pick any girl in our college.\n\n Now welcome me. Our next developer, Kush Raj Singh from Varanasi, UP. I think that I am that guy who always thinks--‘What am I doing in this Engineering!’, just like any other college students. I don’t know, in which thing I am good at, but for sure, I know that I am not good in impressing girls. Ask to above mentioned developers, they will tell you about it.\n\n We all researched whole of our country and came to rural part of Bengaluru to pursue our future. I think its enough for our introduction, as in this semester, we still have to work on another project. That’s our complete team, or at least we can say family of this app journey. Thankyou. \n\n Our developers:\n\n 1.Kush Raj Singh (IG: kush_raj_singh_ , Email: kushsingh01230@gmail.com  , Snapchat: kushrajsingh1)\n\n 2.Harshit Karn (Email: harshitsma2011@gmail.com)\n\n 3.Aswini Verma (IG: sun9y._ , Email: aswinir.18.becs@acharya.ac.in) \n\n " />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

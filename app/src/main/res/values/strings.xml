@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">HEALTH AND FITNESS</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_welcome">Welcome</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Calorie Calculator</string>
+    <string name="slide_1_desc">Calorie calculator with Indian food items and Meal Planning</string>
+
+    <string name="slide_2_title">BMI calculator</string>
+    <string name="slide_2_desc">Measure your accurate BMI for a healthy life</string>
+
+    <string name="slide_3_title">Steps</string>
+    <string name="slide_3_desc">Count your steps with a daily goal to work towards</string>
+
+    <string name="slide_4_title">Water Track</string>
+    <string name="slide_4_desc">Track your daily consumption of water and maximize your physical performance</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+</resources>

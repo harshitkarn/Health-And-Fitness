@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <item android:title="Profile">
+            <menu>
+
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/profile"
+                    android:title="Profile"/>
+                    <item
+                        android:id="@+id/nav_editprof"
+                        android:icon="@drawable/edit"
+                        android:title="Edit Profile" />
+                    <item
+                        android:id="@+id/nav_delprofile"
+                        android:icon="@drawable/delete"
+                        android:title="Delete Account" />
+
+            </menu>
+        </item>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_rate"
+                android:icon="@android:drawable/btn_star_big_on"
+                android:title="Rate US" />
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/feedback"
+                android:title="Feedback" />
+
+
+        </menu>
+
+    </item>
+
+    <item android:title="About Us">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:title="About Us" />
+            <item
+                android:id="@+id/nav_terms"
+                android:icon="?android:attr/actionModeFindDrawable"
+                android:title="Terms and Conditions" />
+        </menu>
+    </item>
+
+</menu>

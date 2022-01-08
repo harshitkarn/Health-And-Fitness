@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,7 +13,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +36,8 @@ public class calorie extends AppCompatActivity {
     Button addexs,addnew;
     EditText newname,newcal,newprot,newcarb,newfat;
     ImageButton imageButtonCal;
+    LinearLayout add_consumed, add_new_foood, add_consumed_lay, add_new_food_lay;
+    ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +69,46 @@ public class calorie extends AppCompatActivity {
         newcarb=findViewById(R.id.carb_new_food);
         newfat=findViewById(R.id.fat_new_food);
         bdhelper = new DBHelper(this);
+        add_consumed = findViewById(R.id.add_consumed_food);
+        add_new_foood = findViewById(R.id.add_new_foood);
+        add_consumed_lay = findViewById(R.id.add_food_layout);
+        add_new_food_lay = findViewById(R.id.add_new_food_layout);
+        scrollView = findViewById(R.id.scrollViewCalorie);
+        add_consumed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(add_new_food_lay.getVisibility() == View.VISIBLE)
+                    add_new_food_lay.setVisibility(View.GONE);
+                if(add_consumed_lay.getVisibility() == View.VISIBLE)
+                    add_consumed_lay.setVisibility(View.GONE);
+                else
+                    add_consumed_lay.setVisibility(View.VISIBLE);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+                    }
+                }, 10);
+            }
+        });
+
+        add_new_foood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(add_consumed_lay.getVisibility() == View.VISIBLE)
+                    add_consumed_lay.setVisibility(View.GONE);
+                if(add_new_food_lay.getVisibility() == View.VISIBLE)
+                    add_new_food_lay.setVisibility(View.GONE);
+                else
+                    add_new_food_lay.setVisibility(View.VISIBLE);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+                    }
+                }, 10);
+            }
+        });
 
         Cursor consumed = bdhelper.checkconsumedavail(formattedDate);
         if (!(consumed.getCount() > 0)) {
@@ -88,8 +134,8 @@ public class calorie extends AppCompatActivity {
         } catch (Exception e) {
             Toast.makeText(calorie.this, "unknown error", Toast.LENGTH_SHORT).show();
         }
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, fooditem);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_list, fooditem);
+        arrayAdapter.setDropDownViewResource(R.layout.spinner_dropdown);
         spinner.setAdapter(arrayAdapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

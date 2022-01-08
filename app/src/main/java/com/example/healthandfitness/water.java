@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +20,8 @@ import java.util.Locale;
 public class water extends AppCompatActivity {
     DBHelper bdhelper;
     ProgressBar water_prog;
-    TextView water_status,addnewwater,cur_date;
+    TextView water_status,cur_date;
+    ImageView addnewwater;
     int watertext;
     ImageButton back_wat;
 

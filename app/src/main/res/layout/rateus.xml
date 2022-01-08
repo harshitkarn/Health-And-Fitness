@@ -5,7 +5,7 @@
     android:layout_width="300dp"
     android:layout_height="300dp"
     android:layout_gravity="center"
-    android:background="#1AD68585">
+    android:background="@drawable/dialog_bg">
 
     <FrameLayout
         android:id="@+id/frameLayout3b"
@@ -21,19 +21,22 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="RATE US"
+            android:textColor="#8a000000"
             android:textSize="17sp"
             android:textStyle="bold" />
 
-        <TextView
+        <ImageView
             android:id="@+id/dialogclsb"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_gravity="right"
-            android:gravity="center"
-            android:text="X"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            app:srcCompat="@drawable/close_icon" />
     </FrameLayout>
 
     <RatingBar

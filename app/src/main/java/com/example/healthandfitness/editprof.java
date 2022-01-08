@@ -17,7 +17,7 @@ public class editprof extends AppCompatActivity {
     TextView dataname;
     EditText data6,data8,data10,data12,data14,data16,data18;
     ImageButton imageButton;
-    Button update;
+    Button update,update_1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +73,8 @@ public class editprof extends AppCompatActivity {
         }
 
         update=findViewById(R.id.update);
-        update.setOnClickListener(new View.OnClickListener() {
+        update_1=findViewById(R.id.update_1);
+        View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 boolean res= HomeScreen.checkuser(data6.getText().toString(),data8.getText().toString(),data10.getText().toString(),data12.getText().toString(),data14.getText().toString(),data16.getText().toString(),data18.getText().toString());
@@ -101,8 +102,9 @@ public class editprof extends AppCompatActivity {
                     Toast.makeText(editprof.this, "Enter gender as Male or Female", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
-
+        };
+        update.setOnClickListener(onClickListener);
+        update_1.setOnClickListener(onClickListener);
 
     }
 

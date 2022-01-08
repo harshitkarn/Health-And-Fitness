@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -14,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -51,7 +54,7 @@ public class HomeScreen extends AppCompatActivity {
         ClickableSpan cs1=new ClickableSpan() {
             @Override
             public void onClick(@NonNull View widget) {
-                TextView dialogcls;
+                ImageView dialogcls;
                 terms.setContentView(R.layout.activity_termsandcond);
                 dialogcls=terms.findViewById(R.id.dialogcls);
                 dialogcls.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +63,7 @@ public class HomeScreen extends AppCompatActivity {
                         terms.dismiss();
                     }
                 });
+                terms.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 terms.show();
             }
         };

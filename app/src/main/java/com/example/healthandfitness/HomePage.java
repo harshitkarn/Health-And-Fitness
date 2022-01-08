@@ -2,12 +2,15 @@ package com.example.healthandfitness;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -156,22 +159,43 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             startActivity(intent1);
         }
         if(id==R.id.nav_delprofile){
-            try {
-                if (bdhelper.CheckUseravail()) {
-                    bdhelper.deluser();
-                    bdhelper.delrating();
-                    bdhelper.deluserconsumed();
-                    bdhelper.deluseraddedfood();
-                    Intent intent = new Intent(HomePage.this, HomeScreen.class);
-                    startActivity(intent);
-                    finish();
-                    Toast.makeText(getApplicationContext(), "Account Deleted Successfully", Toast.LENGTH_SHORT).show();
-                    //return;
+            TextView cancelDelete, confirmDelete;
+            ImageView delClose;
+            terms.setContentView(R.layout.deleteconfirm_dialog);
+            delClose = terms.findViewById(R.id.imageView1727);
+            cancelDelete = terms.findViewById(R.id.cancelDelete);
+            confirmDelete = terms.findViewById(R.id.confirmDelete);
+            View.OnClickListener onclickLis= new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    terms.dismiss();
                 }
-            }
-            catch (Exception e){
-                Toast.makeText(HomePage.this,"Error deleting account",Toast.LENGTH_SHORT).show();
-            }
+            };
+            delClose.setOnClickListener(onclickLis);
+            cancelDelete.setOnClickListener(onclickLis);
+            confirmDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        if (bdhelper.CheckUseravail()) {
+                            bdhelper.deluser();
+                            bdhelper.delrating();
+                            bdhelper.deluserconsumed();
+                            bdhelper.deluseraddedfood();
+                            Intent intent = new Intent(HomePage.this, HomeScreen.class);
+                            startActivity(intent);
+                            finish();
+                            Toast.makeText(getApplicationContext(), "Account Deleted Successfully", Toast.LENGTH_SHORT).show();
+                            //return;
+                        }
+                    }
+                    catch (Exception e){
+                        Toast.makeText(HomePage.this,"Error deleting account",Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+            terms.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            terms.show();
         }
         if(id==R.id.nav_share){
             Intent sendIntent = new Intent();
@@ -184,7 +208,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         }
         if(id==R.id.nav_rate) {
             try{
-                TextView dialogclsb;
+                ImageView dialogclsb;
             RatingBar ratingBar;
             Button submit;
             terms.setContentView(R.layout.rateus);
@@ -216,6 +240,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                         }
                 }
             });
+                terms.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             terms.show();
         }
             catch (Exception e){
@@ -231,7 +256,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             startActivity(email);
         }
         if(id==R.id.nav_about){
-            TextView dialogclsa;
+            ImageView dialogclsa;
             terms.setContentView(R.layout.aboutus);
             dialogclsa=terms.findViewById(R.id.dialogclsa);
             dialogclsa.setOnClickListener(new View.OnClickListener() {
@@ -240,11 +265,12 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                     terms.dismiss();
                 }
             });
+            terms.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             terms.show();
 
         }
         if(id==R.id.nav_terms){
-            TextView dialogcls;
+            ImageView dialogcls;
             terms.setContentView(R.layout.activity_termsandcond);
             dialogcls=terms.findViewById(R.id.dialogcls);
             dialogcls.setOnClickListener(new View.OnClickListener() {
@@ -253,6 +279,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                     terms.dismiss();
                 }
             });
+            terms.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             terms.show();
 
         }
